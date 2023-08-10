@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for n in range(26):
-    print(chr(97 + n), end="")
+    print("{}".format(chr(97 + n)), end="")
