@@ -2,9 +2,9 @@
 if __name__ == "__main__":
     from sys import argv
 
-sum = 0
+total = 0
 length = len(argv) - 1
 if length > 0:
     for i in range(1, length + 1):
-        sum += int(argv[i])
-print("{}".format(sum))
+        total += int(argv[i])
+print("{}".format(total))
