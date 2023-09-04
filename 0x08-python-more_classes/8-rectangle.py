@@ -71,7 +71,8 @@ class Rectangle:
         """Defining str()"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        result = "\n".join(["{}".format(self.print_symbol) * self.__width] * self.__height)
+        result = "\n".join(["{}".format(self.print_symbol) * self.__width]
+                           * self.__height)
 
         return result
 
