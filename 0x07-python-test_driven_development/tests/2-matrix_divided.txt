@@ -1,0 +1,49 @@
+# 0-add_interger module
+==============================
+
+Testing function  ``matrix_divided()``
+------------------------------
+
+Importing function from module:
+	  >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Checking for module docstring:
+	 >>> doc = __import__("2-matrix_divided").__doc__
+	 >>> len(doc) > 1
+	 True
+
+Checking for function docstring:
+	 >>> print(bool(matrix_divided.__doc__))
+	 True
+
+Checking equal column matrix as input:
+	 >>> matrix = [[1, 2, 3], [4, 5, 6]]
+	 >>> print(matrix_divided(matrix, 3))
+	 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Checking equal column matrix with mixed data types:
+	 >>> matrix[0][2] = "Betty"
+	 >>> print(matrix_divided(matrix, 3))
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking unequal matrix colums:
+	 >>> matrix = [[1, 2, 3], [4, 5, 6, 7, 9]]
+	 >>> print(matrix_divided(matrix, 3))
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: Each row of the matrix must have the same size
+
+Checking divisor as not int/float value:
+	 >>> matrix = [[1, 2, 3],[4, 5, 6]]
+	 >>> print(matrix_divided(matrix, "Number"))
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: div must be a number
+
+Checking divisor as zero:
+	 >>> print(matrix_divided(matrix, 0))
+	 Traceback (most recent call last):
+	 ...
+	 ZeroDivisionError: division by zero

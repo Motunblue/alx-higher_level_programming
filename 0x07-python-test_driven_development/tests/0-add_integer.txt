@@ -1,0 +1,41 @@
+# 0-add_interger module
+==============================
+
+Using function  ``add_integer()``
+------------------------------
+
+Importing function from module:
+	  >>> add_integer = __import__("0-add_integer").add_integer
+
+Checking for module docstring:
+	 >>> doc = __import__("0-add_integer").__doc__
+	 >>> len(doc) > 1
+	 True
+
+Checking for function docstring:
+	 >>> print(bool(add_integer.__doc__))
+	 True
+
+Checking positive integer as input:
+	 >>> add_integer(3, 5)
+	 8
+
+Checking negative interget as input:
+	 >>> add_integer(4, -7)
+	 -3
+
+Checking a string as input:
+	 >>> add_integer("Book", 7)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: a must be an integer
+
+Checking a float as input:
+	 >>> add_integer(5.7, 2.4)
+	 7
+
+Checking a list as input:
+	 >>> add_integer(3, [1, 2, 4, 7])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: b must be an integer
