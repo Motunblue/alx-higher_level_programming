@@ -8,8 +8,12 @@ class Rectangle:
     Attributes:
        __width (int): Rectangle width
        __height (int): Rectangle height
+       number_of_instances (int):
 
     """
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initializing
 
@@ -20,6 +24,7 @@ class Rectangle:
         """
         self.__height = height
         self.__width = width
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -71,3 +76,7 @@ class Rectangle:
     def __repr__(self):
         """Defining repl"""
         return "Rectangle({!r}, {!r})".format(self.__width, self.__height)
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
