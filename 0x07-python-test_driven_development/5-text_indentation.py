@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Text indentaion"""
 
+
 def text_indentation(text):
     """Print a text with two new line after .? and :"""
 
