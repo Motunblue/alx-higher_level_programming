@@ -1,0 +1,33 @@
+# 3-say_my_name module
+==============================
+
+Testing function  ``say_my_name()``
+------------------------------
+
+Importing function from module:
+	  >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking for module docstring:
+	 >>> doc = __import__("3-say_my_name").__doc__
+	 >>> len(doc) > 1
+	 True
+
+Checking for function docstring:
+	 >>> print(bool(say_my_name.__doc__))
+	 True
+
+Checking regular input:
+	 >>> say_my_name("John", "Smith")
+	 My name is John Smith
+
+Checking first name as non string type:
+	 >>> say_my_name(190, "Smith")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: first_name must be a string
+
+Checking last name as non string type:
+	 >>> say_my_name("John", (1, 2, 8))
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: last_name must be a string
