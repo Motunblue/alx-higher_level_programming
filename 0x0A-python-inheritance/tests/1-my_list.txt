@@ -1,0 +1,49 @@
+# 1-my_list module
+==============================
+
+Testing function  ``1-my_list()``
+------------------------------
+
+Importing function from module:
+	  >>> MyList = __import__("1-my_list").MyList
+
+Checking Instanciation:
+         >>> my_list = MyList()
+	 >>> isinstance(my_list, MyList)
+	 True
+
+Checking MyList as subclass list:
+	 >>> issubclass(MyList, list)
+	 True
+
+Checking empty list:
+	 >>> my_list.print_sorted()
+	 []
+
+Checking str:
+	 >>> print(my_list)
+	 []
+
+Checking sorted list:
+	 >>> my_list.append(1)
+	 >>> my_list.append(2)
+	 >>> my_list.append(3)
+	 >>> my_list.append(4)
+	 >>> my_list.print_sorted()
+	 [1, 2, 3, 4]
+
+Checking unsorted list:
+	 >>> my_list.append(1)
+	 >>> my_list.append(2)
+	 >>> my_list.print_sorted()
+	 [1, 1, 2, 2, 3, 4]
+
+Checking if function returns new list:
+	 >>> print(my_list)
+	 [1, 2, 3, 4, 1, 2]
+
+Checking list with negative:
+	 >>> my_list.append(-2)
+	 >>> my_list.append(-7)
+	 >>> my_list.print_sorted()
+	 [-7, -2, 1, 1, 2, 2, 3, 4]
