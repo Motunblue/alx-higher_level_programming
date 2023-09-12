@@ -16,4 +16,4 @@ except FileNotFoundError:
 for a in args:
     json_list.append(a)
 
-save_to_json_file("add_item.json")
+save_to_json_file(json_list, "add_item.json")
