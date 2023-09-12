@@ -35,7 +35,5 @@ class Student:
         """replaces all attributes of a the student"""
 
         for k in json:
-            try:
-                setattr(self, key, json[k])
-            except Exception:
-                pass
+            if hasattr(self, k):
+                setattr(self, k, json[k])
