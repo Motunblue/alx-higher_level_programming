@@ -9,11 +9,11 @@ class Square(Rectangle):
     def __init__(self, size):
         """Initialization
         """
-        super().__init__(size, size)
-        super().integer_validator("size", size)
+        self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size, size)
 
     def __str__(self):
         """Defines str()"""
 
-        return "[sqaure] {}/{}".format(self.__size, self.__size)
+        return "[Sqaure] {}/{}".format(self.__size, self.__size)
