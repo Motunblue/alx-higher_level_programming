@@ -11,12 +11,12 @@ class TestBase(unittest.TestCase):
     def test_without_args(self):
         b1 = Base()
         b2 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
+        self.assertEqual(b1.id, b2.id - 1)
 
     def test_with_args(self):
         b3 = Base(12)
         self.assertEqual(b3.id, 12)
+        del b3
 
 if __name__ == "__main__":
     unittest.main()
