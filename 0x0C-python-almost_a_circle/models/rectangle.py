@@ -123,6 +123,6 @@ class Rectangle(Base):
     def __str__(self):
         """method for calling str()"""
 
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                self.x, self.y, self.width, self.height)
-
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
