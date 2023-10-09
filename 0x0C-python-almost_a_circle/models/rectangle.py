@@ -87,4 +87,42 @@ class Rectangle(Base):
 
     def display(self):
         """Prints rectangle instace with chr #"""
-        print("\n".join(["#" * self.__width] * self.__height))
+
+        for _ in range(self.__y):
+            print()
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
+
+    def update(self, *args, **kwargs):
+        """This updates the rectangle init"""
+
+        num_args = len(args)
+        if num_args >= 1:
+            self.id = args[0]
+        if num_args >= 2:
+            self.width = args[1]
+        if num_args >= 3:
+            self.height = args[2]
+        if num_args >= 4:
+            self.x = args[3]
+        if num_args >= 5:
+            self.x = args[4]
+
+        if kwargs:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.width = kwargs['width']
+            if 'height' in kwargs:
+                self.height = kwargs['height']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
+            if 'y' in kwargs:
+                self.y = kwargs['y']
+
+    def __str__(self):
+        """method for calling str()"""
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.x, self.y, self.width, self.height)
+
