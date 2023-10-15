@@ -106,7 +106,7 @@ class Rectangle(Base):
         if num_args >= 4:
             self.x = args[3]
         if num_args >= 5:
-            self.x = args[4]
+            self.y = args[4]
 
         if kwargs:
             if 'id' in kwargs:
