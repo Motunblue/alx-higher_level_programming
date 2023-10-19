@@ -1,7 +1,7 @@
--- lit all cities from a sub query
+-- list all cities from a sub query
 SELECT id, name FROM cities
 WHERE state_id IN
        (SELECT id
-       FROM state
+       FROM states
        WHERE name = "California")
-       ORDER BY `id`;
+       ORDER BY id;
