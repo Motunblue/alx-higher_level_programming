@@ -1,7 +1,11 @@
 #!/usr/bin/node
 const argv = +(process.argv)[2];
+let output = ''
 if (isNaN(argv)) {
   console.log('Missing size');
 } else {
-  console.log('X'.repeat(argv));
+  for (let i = 0; i < argv; i++) {
+    output += 'X';
+  }
+  console.log(output);
 }
