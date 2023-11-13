@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const argv = process.argv;
-if (isNaN(argv[2]) || isNaN(argv[3])) {
-  console.log(0);
+if (argv.length <= 3) {
+  console.log('0');
 } else {
   let largest = argv[2];
   let secondLargest = argv[3];
