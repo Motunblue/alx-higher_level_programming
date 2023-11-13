@@ -6,7 +6,7 @@ if (argv.length <= 3) {
   let largest = +argv[2];
   let secondLargest = +argv[3];
   argv.forEach((val) => {
-    if (+val > largest) {
+    if (+val >= largest) {
       secondLargest = largest;
       largest = +val;
     }
