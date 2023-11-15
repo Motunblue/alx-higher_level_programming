@@ -17,7 +17,6 @@ fs.readFile(argv[2], 'utf8', (err, data1) => {
     fs.writeFile(argv[4], concat, 'utf8', (err) => {
       if (err) {
         console.error(`Error writing to ${argv[4]}: ${err}`);
-        return;
       }
     });
   });
