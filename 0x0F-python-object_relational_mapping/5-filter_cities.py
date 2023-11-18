@@ -25,10 +25,11 @@ if __name__ == "__main__":
     """
     conn = connect(sys.argv[1], sys.argv[2], sys.argv[3])
     cur = conn.cursor()
-    query = """SELECT cities.id, cities.name, state.id
-        FROM cities INNER JOIN states ON state.id=cities.state_id"""
-    cur.execute(query)
+    query = """SELECT cities.name FROM cities WHERE cities.state_id 
+        = (SELECT states.id FROM states WHERE states.name 
+        LIKE BINARY %s) """
+    cur.execute(query, (sys.argv[4],))
     result = cur.fetchall()
-    for row in result:
-        print(row)
+    row= list(rows[0] for rows in result)
+    print(", ".join(row))
     conn.close()
