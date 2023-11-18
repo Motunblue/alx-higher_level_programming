@@ -25,8 +25,8 @@ if __name__ == "__main__":
     """
     conn = connect(sys.argv[1], sys.argv[2], sys.argv[3])
     cur = conn.cursor()
-    query = """SELECT cities.id, cities.name, state.id
-        FROM cities INNER JOIN states ON state.id=cities.state_id"""
+    query = """SELECT cities.id, cities.name, states.name
+        FROM cities INNER JOIN states ON states.id=cities.state_id"""
     cur.execute(query)
     result = cur.fetchall()
     for row in result:
