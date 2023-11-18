@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
 """
     Select States module
 """
@@ -20,6 +18,9 @@ def connect(username, passwd, dbname):
 
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
+
     """Select states table from a database
     """
     conn = connect(sys.argv[1], sys.argv[2], sys.argv[3])
