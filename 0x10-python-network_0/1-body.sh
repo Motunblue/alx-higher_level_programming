@@ -1,11 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Takes a url and send GET request to the URL
-# Display the body of the reponse with 200 status code
-
-url="http://$1"
-status=$(curl -sI $url | grep 'HTTP/1.' | awk '{print $2}')
-
-if [ "$status" -eq 200 ]; then
-    curl $url
-fi
-
+curl -sI http://"$1" | grep 'HTTP/1.' | awk '{print $2}' | grep -q "200" && curl -s http://$1 
