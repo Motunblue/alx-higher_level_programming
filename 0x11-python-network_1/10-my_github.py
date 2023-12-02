@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import requests
     import sys
 
-    url = f"https://api.github.com/{sys.argv[1]}"
+    url = f"https://api.github.com/user/{sys.argv[1]}"
     header = {
         "Accept": "application/vnd.github+json",
         "Authorization": f"Bearer {sys.argv[2]}",
@@ -16,4 +16,5 @@ if __name__ == "__main__":
     }
 
     r = requests.get(url, headers=header)
-    print(r.json()["id"])
+    print(r.json())
+    print(r.status_code)
