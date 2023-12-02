@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-"""Get script module"""
+"""JSON API"""
 
 
 if __name__ == "__main__":
-    """Send request to a url and display a value"""
+    """Send a post request"""
     import requests
     import sys
 
-    try:
-        r = requests.get(sys.argv[1])
-        r.raise_for_status()
-        print(r.text)
-    except requests.exceptions.RequestException as e:
-        print("Error code:", e.response.status_code)
+    letter = ""
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
+    r = requests.post("http://0.0.0.0:5000/search_user", {"q": letter})
+    dic = eval(r.text)
+    if not isinstance(dic, dict):
+        print("Not a valid JSON")
+    elif not dic:
+        print("No result")
+    else:
+        print("[{}] {}".format(dic["id"], dic["name"]))
