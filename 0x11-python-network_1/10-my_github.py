@@ -16,5 +16,4 @@ if __name__ == "__main__":
     }
 
     r = requests.get(url, headers=header)
-
-    print(r["id"])
+    print(r.json()["id"])
