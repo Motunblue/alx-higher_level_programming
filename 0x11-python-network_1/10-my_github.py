@@ -18,3 +18,5 @@ if __name__ == "__main__":
     r = requests.get(url, headers=header)
     if "id" in r.json():
         print(r.json()["id"])
+    else:
+        print("None")
