@@ -20,4 +20,3 @@ if __name__ == "__main__":
             print("[{}] {}".format(res["id"], res["name"]))
     except ValueError:
         print("Not a valid JSON")
-    
